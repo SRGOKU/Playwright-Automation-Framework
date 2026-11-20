@@ -8,8 +8,12 @@ on:
     branches: [master]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   playwright-tests:
+    name: Run Playwright Tests
     timeout-minutes: 30
     runs-on: ubuntu-latest
 
@@ -38,6 +42,11 @@ jobs:
       - name: Run Playwright UI and API tests
         run: npx playwright test
 
+      - name: Upload report for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: playwright-report/
+
       - name: Upload Playwright HTML report
         if: always()
         uses: actions/upload-artifact@v4
@@ -53,3 +62,22 @@ jobs:
           name: playwright-test-results
           path: test-results/
           retention-days: 14
+
+  deploy:
+    name: Deploy Report to GitHub Pages
+    needs: playwright-tests
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
