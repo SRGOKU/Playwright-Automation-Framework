@@ -1,0 +1,18 @@
+
+{
+    "searchProduct": {
+        "name": "Blue Top"
+    },
+    "expectedProduct": {
+        "name": "Blue Top",
+        "price": "Rs. 500"
+    },
+    "singleProductCart": {
+        "quantity": 1,
+        "total": "Rs. 500"
+    },
+    "multipleProductCart": {
+        "quantity": 2,
+        "total": "Rs. 1000"
+    }
+}

@@ -1,0 +1,8 @@
+
+{
+    "invalidUser": {
+        "email": "invaliduser123@example.com",
+        "password": "WrongPassword123",
+        "expectedMessage": "Your email or password is incorrect!"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "products": "/api/productsList",
+    "brands": "/api/brandsList",
+    "searchProduct": "/api/searchProduct",
+    "verifyLogin": "/api/verifyLogin",
+    "createAccount": "/api/createAccount",
+    "deleteAccount": "/api/deleteAccount",
+    "updateAccount": "/api/updateAccount",
+    "getUserDetail": "/api/getUserDetailByEmail"
+}

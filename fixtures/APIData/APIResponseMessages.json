@@ -1,0 +1,17 @@
+{
+    "account": {
+        "createSuccess": "User created!",
+        "updateSuccess": "User updated!",
+        "deleteSuccess": "Account deleted!",
+        "duplicateEmail": "Email already exists!",
+        "missingEmail": "Bad request, email parameter is missing in GET request."
+    },
+    "authentication": {
+        "loginSuccess": "User exists!",
+        "missingParameters": "Bad request, email or password parameter is missing in POST request.",
+        "invalidCredentials": "User not found!"
+    },
+    "search": {
+        "missingParameter": "Bad request, search_product parameter is missing in POST request."
+    }
+}
