@@ -25,7 +25,7 @@ module.exports = defineConfig({
     use: {
         baseURL: process.env.BASE_URL,
         channel: 'chrome',
-        headless: false,
+        headless: process.env.CI ? true : false,
         launchOptions: { args: ['--start-maximized'] },
         viewport: null,
         testIdAttribute: 'data-qa',
